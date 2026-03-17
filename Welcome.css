@@ -1,0 +1,122 @@
+body {
+    margin: 0; padding: 0;
+    background-color: #ffffff;
+    overflow: hidden;
+    font-family: sans-serif;
+}
+
+.banner { width: 100%; height: 100vh; position: relative; }
+
+/* --- SLIDER --- */
+.slider {
+    position: absolute; width: 180px; height: 280px;
+    top: 10%; left: calc(20% - 90px);
+    transform-style: preserve-3d;
+    transform: perspective(1200px) rotateX(-12deg);
+    animation: autoRun 25s linear infinite;
+}
+
+@keyframes autoRun {
+    from { transform: perspective(1200px) rotateX(-12deg) rotateY(0deg); }
+    to { transform: perspective(1200px) rotateX(-12deg) rotateY(360deg); }
+}
+
+.slider .item {
+    position: absolute; inset: 0;
+    transform: rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(220px);
+}
+
+/* --- CARTES ET POLICE HONK --- */
+.greek-card {
+    width: 100%; height: 100%;
+    background: #ffffff; border-radius: 12px;
+    display: flex; flex-direction: column; justify-content: space-around; align-items: center;
+    color: #2c7bb6; border: 1px solid #d0d0d0;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35); /* Ombre foncée accentuée */
+    padding: 10px 0;
+}
+
+.honk-title {
+    font-family: "Honk", system-ui;
+    font-size: 1.3rem;
+    line-height: 1;
+    text-align: center;
+}
+
+.symbol { font-family: 'Lora', serif; font-style: italic; font-size: 3.2rem; }
+.symbol-small { font-family: 'Lora', serif; font-style: italic; font-size: 2.4rem; }
+.label { font-size: 0.7rem; color: #999; text-transform: uppercase; font-weight: bold; }
+.name-text { font-family: serif; font-size: 1.6rem; color: #2c7bb6; }
+
+/* --- BOX DROITE --- */
+.floating-box {
+    position: absolute; right: 50px; top: 15%;
+    width: 380px; padding: 25px;
+    background: white; border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    opacity: 0; transform: translateX(50px);
+    transition: all 1s ease-out;
+    text-align: center;
+}
+.floating-box.show { opacity: 1; transform: translateX(0); }
+
+.social-icons { display: flex; justify-content: center; gap: 10px; margin-bottom: 15px; }
+.social-icons img { width: 26px; height: 26px; transition: 0.3s; }
+.social-icons img:hover { transform: translateY(-5px); }
+
+.audiowide-regular { font-family: "Audiowide", sans-serif; }
+.construction-text { font-size: 0.9rem; color: #333; }
+.dot-wave { display: inline-block; animation: wave 1s infinite alternate; color: #2c7bb6; }
+@keyframes wave { from { transform: translateY(0); } to { transform: translateY(-8px); } }
+
+/* --- COUNTDOWN --- */
+#full-countdown { display: flex; justify-content: space-around; margin-top: 20px; color: #2c7bb6; }
+.time-unit { display: flex; flex-direction: column; align-items: center; }
+.time-unit span { font-size: 1.5rem; font-weight: bold; }
+.time-unit p { font-size: 0.55rem; color: #999; text-transform: uppercase; margin: 0; }
+
+/* --- CUBE & FLY-IN --- */
+.cube-container {
+    position: absolute; bottom: 80px; right: 100px;
+    opacity: 0; transform: translateY(200px);
+    transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.cube-container.fly-in { opacity: 1; transform: translateY(0); }
+
+.cube {
+    width: 60px; height: 60px; transform-style: preserve-3d;
+    transform: rotateX(-30deg) rotateY(45deg);
+}
+.cube-container.fly-in .cube { animation: bounce 2s ease-in-out infinite; }
+
+@keyframes bounce {
+    0%, 100% { transform: rotateX(-30deg) rotateY(45deg) translateY(0); }
+    50% { transform: rotateX(-30deg) rotateY(45deg) translateY(-20px); }
+}
+
+.cube div { position: absolute; width: 100%; height: 100%; transform-style: preserve-3d; }
+.cube div span {
+    position: absolute; width: 100%; height: 100%;
+    background: linear-gradient(#151515, #00ecff);
+    transform: rotateY(calc(90deg * var(--i))) translateZ(30px);
+    transition: 0.4s;
+}
+
+.cube .top {
+    position: absolute; width: 60px; height: 60px; background: #222;
+    transform: rotateX(90deg) translateZ(30px);
+    display: flex; justify-content: center; align-items: center;
+    color: #00ecff; font-size: 10px; font-weight: bold; transition: 0.4s;
+}
+
+.cube .top::before {
+    content: ''; position: absolute; width: 60px; height: 60px;
+    background: #00ecff; transform: translateZ(-90px);
+    filter: blur(20px); box-shadow: 0 0 100px rgba(0,236,255,0.6);
+    transition: 0.4s;
+}
+
+/* HOVER ROSE */
+.cube-button:hover .cube div span { background: linear-gradient(#151515, #ff0057); }
+.cube-button:hover .cube .top { color: #ff0057; }
+.cube-button:hover .cube .top::before { background: #ff0057; box-shadow: 0 0 100px rgba(255, 0, 87, 0.8); }
