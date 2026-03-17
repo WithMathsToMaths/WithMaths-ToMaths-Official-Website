@@ -2,19 +2,21 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>WithMaths ToMaths - Welcome</title>
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Honk&family=Lora:ital@1&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
 <body>
 
     <div class="banner">
-        <div class="slider" style="--quantity: 3">
-            <div class="item" style="--position: 1"><div class="greek-card" id="card-1"></div></div>
-            <div class="item" style="--position: 2"><div class="greek-card" id="card-2"></div></div>
-            <div class="item" style="--position: 3"><div class="greek-card" id="card-3"></div></div>
+        <div class="slider-container">
+            <div class="slider" style="--quantity: 3">
+                <div class="item" style="--position: 1"><div class="greek-card" id="card-1"></div></div>
+                <div class="item" style="--position: 2"><div class="greek-card" id="card-2"></div></div>
+                <div class="item" style="--position: 3"><div class="greek-card" id="card-3"></div></div>
+            </div>
         </div>
 
         <div id="info-box" class="floating-box">
@@ -32,9 +34,9 @@
             </h2>
 
             <div id="full-countdown" class="audiowide-regular">
-                <div class="time-unit"><span id="months">00</span><p>mois</p></div>
-                <div class="time-unit"><span id="days">00</span><p>jours</p></div>
-                <div class="time-unit"><span id="hours">00</span><p>heures</p></div>
+                <div class="time-unit"><span id="months">00</span><p>months</p></div>
+                <div class="time-unit"><span id="days">00</span><p>days</p></div>
+                <div class="time-unit"><span id="hours">00</span><p>hours</p></div>
                 <div class="time-unit"><span id="minutes">00</span><p>min</p></div>
                 <div class="time-unit"><span id="seconds">10</span><p>sec</p></div>
             </div>
