@@ -26,32 +26,21 @@ function updateSliderCards() {
     }
 }
 
-// Lancement initial et rotation des cartes
 updateSliderCards();
 setInterval(updateSliderCards, 20000);
 
-// Apparitions synchronisées après 2 secondes
 setTimeout(() => {
-    const infoBox = document.getElementById('info-box');
-    const cube = document.getElementById('welcome-cube');
-    if(infoBox) infoBox.classList.add('show');
-    if(cube) cube.classList.add('fly-in');
+    document.getElementById('info-box').classList.add('show');
+    document.getElementById('welcome-cube').classList.add('fly-in');
 }, 2000);
 
-// Compte à rebours de 10 secondes
 let totalSeconds = 10;
-const secDisplay = document.getElementById('seconds');
 const timer = setInterval(() => {
     totalSeconds--;
     if (totalSeconds < 0) {
         clearInterval(timer);
-        confetti({ 
-            particleCount: 150, 
-            spread: 70, 
-            origin: { y: 0.7 },
-            colors: ['#00ecff', '#ff0057', '#ffffff'] 
-        });
+        confetti({ particleCount: 200, spread: 70, origin: { y: 0.6 } });
         return;
     }
-    if(secDisplay) secDisplay.textContent = String(totalSeconds).padStart(2, '0');
+    document.getElementById('seconds').textContent = String(totalSeconds).padStart(2, '0');
 }, 1000);
