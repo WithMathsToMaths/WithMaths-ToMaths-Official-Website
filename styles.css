@@ -47,8 +47,8 @@ body {
 .floating-box {
     position: absolute; 
     right: 5vw; top: 18vh;
-    width: 24vw; 
-    padding: 1.8vw;
+    width: 26vw; 
+    padding: 2vw;
     background: white; border-radius: 1.5vw;
     box-shadow: 0 1vw 3vw rgba(0,0,0,0.12);
     opacity: 0; transform: translateX(5vw);
@@ -59,14 +59,13 @@ body {
 
 .social-icons { display: flex; justify-content: center; gap: 0.8vw; margin-bottom: 1.2vw; align-items: center; }
 .social-icons img, .x-svg { width: 1.8vw; height: 1.8vw; transition: 0.3s; }
-.x-svg { fill: #000; }
+.x-svg { fill: #000; vertical-align: middle; }
 .social-icons a:hover { transform: translateY(-0.3vw); }
 
-.audiowide-regular { font-family: "Audiowide", sans-serif; }
-
-/* MODIFICATION : TAILLE TEXTE ET POINTS */
+/* TITRE AUDIOWIDE 1.8vw */
 .construction-text { 
-    font-size: 1.1vw; /* Augmenté */
+    font-family: "Audiowide", sans-serif;
+    font-size: 1.8vw;
     color: #333; 
     margin-bottom: 1vw;
 }
@@ -75,10 +74,8 @@ body {
     color: #2c7bb6;
     display: inline-block;
     opacity: 0;
-    animation: blink 6s infinite; /* Cycle de 6s pour laisser du temps */
+    animation: blink 6s infinite;
 }
-
-/* Délai de 2 secondes entre chaque point */
 .dot:nth-child(1) { animation-delay: 0s; }
 .dot:nth-child(2) { animation-delay: 2s; }
 .dot:nth-child(3) { animation-delay: 4s; }
@@ -89,10 +86,11 @@ body {
 }
 
 #full-countdown { display: flex; justify-content: space-between; margin-top: 1.5vw; color: #2c7bb6; }
+.audiowide-regular { font-family: "Audiowide", sans-serif; }
 .time-unit span { font-size: 1.3vw; font-weight: bold; display: block; }
 .time-unit p { font-size: 0.55vw; color: #999; margin: 0; text-transform: uppercase; }
 
-/* --- CUBE (MOYENNE) --- */
+/* --- CUBE (Taille 5.5vw maintenue) --- */
 .cube-container {
     position: absolute; bottom: 10vh; right: 8vw;
     opacity: 0; transform: translateY(10vh);
