@@ -34,7 +34,7 @@ setTimeout(() => {
     document.getElementById('welcome-cube').classList.add('fly-in');
 }, 2000);
 
-let totalSeconds = 10;
+let totalSeconds = 120;
 const timer = setInterval(() => {
     totalSeconds--;
     if (totalSeconds < 0) {
