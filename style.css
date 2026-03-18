@@ -65,9 +65,9 @@ body {
 .dot-wave { display: inline-block; animation: wave 1s infinite alternate; color: #2c7bb6; }
 @keyframes wave { from { transform: translateY(0); } to { transform: translateY(-0.5vw); } }
 
-#full-countdown { display: flex; justify-content: space-around; margin-top: 1.5vw; color: #2c7bb6; }
-.time-unit span { font-size: 1.2vw; font-weight: bold; }
-.time-unit p { font-size: 0.5vw; color: #999; margin: 0; }
+#full-countdown { display: flex; justify-content: space-around; margin-top: 2.0vw; color: #2c7bb6; }
+.time-unit span { font-size: 3.0vw; font-weight: bold; }
+.time-unit p { font-size: 1.0vw; color: #999; margin: 0; }
 
 /* --- CUBE --- */
 .cube-container {
