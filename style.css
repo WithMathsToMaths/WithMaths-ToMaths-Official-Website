@@ -56,12 +56,12 @@ body {
 }
 .floating-box.show { opacity: 1; transform: translateX(0); }
 
-.social-icons { display: flex; justify-content: center; gap: 2.0vw; margin-bottom: 0.8vw; }
-.social-icons img { width: 2.0vw; height: 2.0vw; transition: 0.3s; }
+.social-icons { display: flex; justify-content: center; gap: 1.0vw; margin-bottom: 0.8vw; }
+.social-icons img { width: 1.0vw; height: 1.0vw; transition: 0.3s; }
 .social-icons img:hover { transform: translateY(-0.3vw); }
 
-.audiowide-regular { font-family: "Audiowide", sans-serif; font-size: 2.0vw; }
-.construction-text { font-size: 2.0vw; color: #333; }
+.audiowide-regular { font-family: "Audiowide", sans-serif; font-size: 1.0vw; }
+.construction-text { font-size: 1.0vw; color: #333; }
 .dot-wave { display: inline-block; animation: wave 1s infinite alternate; color: #2c7bb6; }
 @keyframes wave { from { transform: translateY(0); } to { transform: translateY(-0.5vw); } }
 
