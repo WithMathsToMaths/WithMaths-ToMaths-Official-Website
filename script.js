@@ -34,13 +34,28 @@ setTimeout(() => {
     document.getElementById('welcome-cube').classList.add('fly-in');
 }, 2000);
 
-let totalSeconds = 120;
+// --- COUNTDOWN (Cible : Dans 30 Jours) ---
+const targetDate = new Date();
+targetDate.setDate(targetDate.getDate() + 30); 
+
 const timer = setInterval(() => {
-    totalSeconds--;
-    if (totalSeconds < 0) {
+    const now = new Date().getTime();
+    const distance = targetDate.getTime() - now;
+
+    const months = Math.floor(distance / (1000 * 60 * 60 * 24 * 30.41));
+    const days = Math.floor((distance % (1000 * 60 * 60 * 24 * 30.41)) / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById('months').textContent = String(months).padStart(2, '0');
+    document.getElementById('days').textContent = String(days).padStart(2, '0');
+    document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+    document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+    document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+
+    if (distance < 0) {
         clearInterval(timer);
         confetti({ particleCount: 200, spread: 70, origin: { y: 0.6 } });
-        return;
     }
-    document.getElementById('seconds').textContent = String(totalSeconds).padStart(2, '0');
 }, 1000);
