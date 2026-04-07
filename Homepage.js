@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const container = document.querySelector(".container");
     const listItems = document.querySelectorAll(".nav-menu li");
 
-    // 1. FIN DU CHARGEMENT (1.8s est le timing idéal)
     setTimeout(() => {
         loader.classList.add('fade-out');
         siteContent.classList.add('visible');
@@ -16,12 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 800);
     }, 2000);
 
-    // 2. BOUTON HAMBURGER
     hamburger.addEventListener("click", () => {
         container.classList.toggle("active");
     });
 
-    // 3. EFFET DE FOCUS CYBERPUNK (Menu 3D)
+
     listItems.forEach(li => {
         li.addEventListener('mouseenter', () => {
             listItems.forEach(item => {
