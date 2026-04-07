@@ -1,29 +1,33 @@
 document.addEventListener('DOMContentLoaded', () => {
     const loader = document.getElementById('loader-wrapper');
     const siteContent = document.getElementById('site-content');
-    const hamburger = document.querySelector(".hamburger-menu");
+    const hamburger_menu = document.querySelector(".hamburger-menu");
     const container = document.querySelector(".container");
     const listItems = document.querySelectorAll(".nav-menu li");
 
+    // 1. FIN DU CHARGEMENT (Professional Reveal)
     setTimeout(() => {
         loader.classList.add('fade-out');
         siteContent.classList.add('visible');
-        document.body.style.overflow = 'auto'; // Réactive le scroll
         
+        // Remove from DOM after transition
         setTimeout(() => {
             loader.style.display = 'none';
         }, 800);
     }, 2000);
 
-    hamburger.addEventListener("click", () => {
+    // 2. TOGGLE DE L'ANIMATION DE PIVOT
+    hamburger_menu.addEventListener("click", () => {
         container.classList.toggle("active");
     });
 
-
+    // 3. EFFET DE FOCUS (OPACITÉ) SUR LE MENU 3D
     listItems.forEach(li => {
         li.addEventListener('mouseenter', () => {
             listItems.forEach(item => {
-                if (item !== li) item.style.opacity = '0.2';
+                if (item !== li) {
+                    item.style.opacity = '0.2';
+                }
             });
         });
 
