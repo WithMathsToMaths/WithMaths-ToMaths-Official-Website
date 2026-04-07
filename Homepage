@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Homepage.css">
+    <title>WithMaths ToMaths | Official Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Delius&family=Poppins:wght@300;400;600;700&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="loader-wrapper">
+        <div class="loader-content">
+            <div class="reveal-text">
+                <h3 class="logo-loader">WITHMATHS<span>TOMATHS</span></h3>
+            </div>
+            <div class="loader-bar-container">
+                <div class="loader-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="site-content">
+        <section class="header">
+            <div class="container">
+                <div class="navbar">
+                    <div class="menu">
+                        <h3 class="logo">WithMaths<span>ToMaths</span></h3>
+                        <div class="hamburger-menu">
+                            <div class="bar"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="main-container">
+                    <div class="main">
+                        <header>
+                            <div class="overlay">
+                                <div class="text-box">
+                                    <h1>WITHMATHS TOMATHS</h1>
+                                    <h1>OFFICIAL WEBSITE</h1>
+                                    <p class="intro-text">
+                                        We will embark on this mathematical journey together, exploring every concept side by side. 
+                                        Our goal is to grow your skills and build your confidence through shared learning.
+                                    </p>
+                                    <a href="#courses" class="cta-btn">START LEARNING</a>
+                                    <p class="disclaimer">
+                                        The certificates provided here are not recognized by any organization in the world. 
+                                        They are intended solely to congratulate you on mastering the concepts.
+                                    </p>
+                                </div>
+                            </div>
+                        </header>
+                    </div>
+                    <div class="shadow one"></div>
+                    <div class="shadow two"></div>
+                </div>
+
+                <div class="links">
+                    <ul class="nav-menu">
+                        <li style="--i:6;"><a href="#"><span>Home</span></a></li>
+                        <li style="--i:5;"><a href="CLM9.html"><span>Courses</span></a></li>
+                        <li style="--i:4;"><a href="#"><span>Archives</span></a></li>
+                        <li style="--i:3;"><a href="#"><span>About</span></a></li>
+                        <li style="--i:2;"><a href="#"><span>Contact</span></a></li>
+                        <li style="--i:1;"><a href="#"><span>Credits</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="Homepage.js"></script>
+</body>
+</html>
