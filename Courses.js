@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const subjects = [
         { name: "COMPUTER SCIENCE", isSquare: true, scrollText: "SCRATCH JR • SCRATCH • ", file: "Computer Science.html" },
         { name: "MATHEMATICS", isSquare: true, scrollText: "MATHEMATICS • ", file: "Mathematics.html" },
-        { name: "LANGUAGES", isSquare: true, scrollText: "ENGLISH • FRANÇAIS • ", file: "Languages.html" }
+        { name: "LANGUAGES", isSquare: true, scrollText: "ENGLISH • FRANÇAIS • 한국어 • ", file: "Languages.html" }
     ];
 
     function updateSlider() {
