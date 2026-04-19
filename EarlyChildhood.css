@@ -1,8 +1,8 @@
 /* --- Variables et Reset --- */
 :root {
-    --bg-color: #0c0c0c;       /* Fond presque noir */
-    --card-bg-initial: #1c1c1e; /* Fond initial des cartes */
-    --accent-purple: #7048f7;  /* Le violet spécifique pour le texte et le survol */
+    --bg-color: #0c0c0c;
+    --card-bg-initial: #1c1c1e;
+    --accent-purple: #7048f7;
     --text-white: #ffffff;
     --text-muted: #888888;
 }
@@ -14,13 +14,13 @@
 }
 
 body {
-    /* Utilisation de polices système grasses pour imiter l'image */
     font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     background-color: var(--bg-color);
     color: var(--text-white);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 /* --- Barre de Navigation --- */
@@ -33,7 +33,7 @@ body {
 }
 
 .logo {
-    font-weight: 900; /* Très gras */
+    font-weight: 900;
     font-size: 1.1rem;
     letter-spacing: 0.5px;
 }
@@ -49,7 +49,6 @@ body {
     transition: all 0.3s ease;
 }
 
-/* Effet de survol sur le bouton de navigation */
 .btn-outline:hover {
     background-color: var(--accent-purple);
     color: white;
@@ -58,14 +57,14 @@ body {
 /* --- Conteneur Principal --- */
 .container {
     display: flex;
-    justify-content: center; /* Centrer horizontalement les deux blocs */
-    align-items: center;      /* Centrer verticalement */
+    justify-content: center;
+    align-items: center;
     flex-grow: 1;
     padding: 0 10%;
-    gap: 80px;                /* Espace entre le texte et les cartes */
+    gap: 80px;
 }
 
-/* --- Section Texte (Guerre - Strictement selon image_3.png) --- */
+/* --- Section Texte --- */
 .hero-text {
     max-width: 500px;
 }
@@ -77,11 +76,11 @@ body {
 }
 
 .hero-text h1 {
-    font-weight: 900; /* Extrêmement gras */
+    font-weight: 900;
     font-size: 5rem;
-    line-height: 0.95; /* Rapproche les lignes */
+    line-height: 0.95;
     margin-bottom: 20px;
-    letter-spacing: -2px; /* Rapproche les lettres */
+    letter-spacing: -2px;
 }
 
 .hero-text h1 .white-text {
@@ -93,47 +92,41 @@ body {
 }
 
 .hero-text .description {
-    color: #b0b0b0; /* Légèrement gris */
+    color: #b0b0b0;
     font-size: 1rem;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
     max-width: 350px;
     line-height: 1.4;
 }
 
-/* Lien cliquable "Back to Pathways" */
 .back-link {
     display: inline-flex;
     align-items: center;
     text-decoration: none;
     color: white;
-    background-color: #222; /* Fond gris foncé du bouton */
-    padding: 8px 15px;
-    border-radius: 4px;
+    background-color: #222;
+    padding: 10px 20px;
+    border-radius: 6px;
     font-weight: 600;
     font-size: 0.85rem;
     transition: background-color 0.3s ease;
+    cursor: pointer;
 }
 
-.back-link .arrow {
-    margin-right: 8px;
-}
-
-/* Effet de survol : le fond du bouton devient violet */
 .back-link:hover {
     background-color: var(--accent-purple);
 }
 
-/* --- Section Cartes (Droite) --- */
+/* --- Section Cartes --- */
 .grade-selection {
     display: flex;
     flex-direction: column;
-    gap: 25px; /* Espace entre les deux cartes */
+    gap: 25px;
 }
 
-/* Rendre le lien invisible mais cliquable sur toute la carte */
 .grade-card-link {
     text-decoration: none;
-    color: inherit; /* Hérite de la couleur du texte de la carte */
+    color: inherit;
 }
 
 .grade-card {
@@ -142,9 +135,7 @@ body {
     padding: 45px 30px;
     border-radius: 20px;
     text-align: center;
-    border: 1px solid #2a2a2a; /* Bordure très subtile */
-    
-    /* Transition fluide pour la couleur de fond et l'effet de zoom */
+    border: 1px solid #2a2a2a;
     transition: transform 0.3s cubic-bezier(0.2, 1, 0.3, 1), background-color 0.4s ease;
 }
 
@@ -160,16 +151,19 @@ body {
     font-size: 0.9rem;
 }
 
-/* --- EFFETS DE SURVOL (HOVER) SUR LES CARTES --- */
-
-/* 1. Le rectangle devient violet */
 .grade-card-link:hover .grade-card {
     background-color: var(--accent-purple);
-    transform: translateY(-5px) scale(1.02); /* Optionnel : léger zoom/soulèvement */
+    transform: translateY(-5px) scale(1.02);
     border-color: var(--accent-purple);
 }
 
-/* 2. Le texte "Click to Enter" devient plus clair pour rester lisible sur le violet */
 .grade-card-link:hover .grade-card p {
     color: rgba(255, 255, 255, 0.8);
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+    .container { flex-direction: column; gap: 40px; text-align: center; padding-top: 40px; }
+    .hero-text h1 { font-size: 3.5rem; }
+    .hero-text .description { margin: 0 auto 20px auto; }
 }
