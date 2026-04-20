@@ -13,9 +13,13 @@ const alphabetGrec = [
     { name: "psi", upper: "\u03A8", lower: "\u03C8" }, { name: "omega", upper: "\u03A9", lower: "\u03C9" }
 ];
 
+// Mise à jour aléatoire des cartes dans le slider
 function updateSliderCards() {
+    // Mélange pour garantir des lettres uniques sur les 3 cartes
+    const shuffled = [...alphabetGrec].sort(() => 0.5 - Math.random());
+    
     for (let i = 1; i <= 3; i++) {
-        const lettre = alphabetGrec[Math.floor(Math.random() * alphabetGrec.length)];
+        const lettre = shuffled[i - 1];
         const card = document.getElementById(`card-${i}`);
         if(card) {
             card.innerHTML = `
@@ -30,29 +34,21 @@ function updateSliderCards() {
     }
 }
 
+// Initialisation et intervalle de changement (20 secondes)
 updateSliderCards();
 setInterval(updateSliderCards, 20000);
 
+// Apparition fluide des éléments au chargement
 setTimeout(() => {
     document.getElementById('info-box').classList.add('show');
     document.getElementById('welcome-cube').classList.add('fly-in');
-}, 2000);
-
-const targetDate = new Date();
-targetDate.setDate(targetDate.getDate() + 30); 
-
-const timer = setInterval(() => {
-    const now = new Date().getTime();
-    const distance = targetDate.getTime() - now;
-    const months = Math.floor(distance / (1000 * 60 * 60 * 24 * 30.41));
-    const days = Math.floor((distance % (1000 * 60 * 60 * 24 * 30.41)) / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    document.getElementById('months').textContent = String(months).padStart(2, '0');
-    document.getElementById('days').textContent = String(days).padStart(2, '0');
-    document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-    document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-    document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
 }, 1000);
+
+// Effet Confetti sur le bouton Cube
+document.querySelector('.cube-button').addEventListener('click', (e) => {
+    confetti({
+        particleCount: 150,
+        spread: 70,
+        origin: { y: 0.6 }
+    });
+});
