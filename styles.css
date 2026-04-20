@@ -8,7 +8,7 @@ body {
 
 .banner { width: 100%; height: 100vh; position: relative; }
 
-/* --- SLIDER --- */
+/* --- SLIDER 3D --- */
 .slider {
     position: absolute; 
     width: 12vw; height: 18vw;
@@ -43,54 +43,37 @@ body {
 .label { font-size: 0.6vw; color: #999; text-transform: uppercase; font-weight: bold; }
 .name-text { font-family: serif; font-size: 1.4vw; color: #2c7bb6; }
 
-/* --- BOX DROITE --- */
+/* --- BOITE D'INFORMATION --- */
 .floating-box {
     position: absolute; 
-    right: 5vw; top: 18vh;
-    width: 26vw; 
+    right: 5vw; top: 22vh;
+    width: 28vw; 
     padding: 2vw;
     background: white; border-radius: 1.5vw;
     box-shadow: 0 1vw 3vw rgba(0,0,0,0.12);
     opacity: 0; transform: translateX(5vw);
-    transition: all 1s ease-out;
+    transition: opacity 1s ease-out, transform 1s ease-out;
     text-align: center;
 }
 .floating-box.show { opacity: 1; transform: translateX(0); }
 
-.social-icons { display: flex; justify-content: center; gap: 0.8vw; margin-bottom: 1.2vw; align-items: center; }
+.social-icons { display: flex; justify-content: center; gap: 0.8vw; margin-bottom: 1.5vw; align-items: center; }
 .social-icons img, .x-svg { width: 1.8vw; height: 1.8vw; transition: 0.3s; }
 .x-svg { fill: #000; vertical-align: middle; }
 .social-icons a:hover { transform: translateY(-0.3vw); }
 
-/* TITRE AUDIOWIDE 1.8vw */
-.construction-text { 
-    font-family: "Audiowide", sans-serif;
-    font-size: 1.8vw;
-    color: #333; 
-    margin-bottom: 1vw;
+.copyright-text {
+    font-family: "Lora", serif;
+    font-size: 0.75vw;
+    line-height: 1.5;
+    color: #666;
+    text-align: justify;
+    margin: 0;
+    border-top: 1px solid #eee;
+    padding-top: 1.2vw;
 }
 
-.dot {
-    color: #2c7bb6;
-    display: inline-block;
-    opacity: 0;
-    animation: blink 6s infinite;
-}
-.dot:nth-child(1) { animation-delay: 0s; }
-.dot:nth-child(2) { animation-delay: 2s; }
-.dot:nth-child(3) { animation-delay: 4s; }
-
-@keyframes blink {
-    0%, 100% { opacity: 0; }
-    20%, 80% { opacity: 1; }
-}
-
-#full-countdown { display: flex; justify-content: space-between; margin-top: 1.5vw; color: #2c7bb6; }
-.audiowide-regular { font-family: "Audiowide", sans-serif; }
-.time-unit span { font-size: 1.3vw; font-weight: bold; display: block; }
-.time-unit p { font-size: 0.55vw; color: #999; margin: 0; text-transform: uppercase; }
-
-/* --- CUBE (Taille 5.5vw maintenue) --- */
+/* --- CUBE --- */
 .cube-container {
     position: absolute; bottom: 10vh; right: 8vw;
     opacity: 0; transform: translateY(10vh);
@@ -100,7 +83,11 @@ body {
 
 .cube { width: 5.5vw; height: 5.5vw; transform-style: preserve-3d; transform: rotateX(-30deg) rotateY(45deg); }
 .cube-container.fly-in .cube { animation: bounce 2s ease-in-out infinite; }
-@keyframes bounce { 0%, 100% { transform: rotateX(-30deg) rotateY(45deg) translateY(0); } 50% { transform: rotateX(-30deg) rotateY(45deg) translateY(-1.5vw); } }
+
+@keyframes bounce { 
+    0%, 100% { transform: rotateX(-30deg) rotateY(45deg) translateY(0); } 
+    50% { transform: rotateX(-30deg) rotateY(45deg) translateY(-1.5vw); } 
+}
 
 .cube div { position: absolute; width: 100%; height: 100%; transform-style: preserve-3d; }
 .cube div span {
@@ -123,7 +110,4 @@ body {
 
 .cube-button:hover .cube div span { background: linear-gradient(#151515, #ff0057); }
 .cube-button:hover .cube .top { color: #ff0057; }
-.cube-button:hover .cube .top::before {
-    background: #ff0057;
-    box-shadow: 0 0 7vw rgba(255, 0, 87, 0.8);
-}
+.cube-button:hover .cube .top::before { background: #ff0057; box-shadow: 0 0 7vw rgba(255, 0, 87, 0.8); }
