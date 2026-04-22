@@ -1,0 +1,179 @@
+:root {
+    --main-grad: linear-gradient(135deg, #ff0080 0%, #7928ca 50%, #4200ff 100%);
+    --glass-card: rgba(255, 255, 255, 0.08);
+    --glass-item: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.15);
+    --accent-yellow: #f1e05a;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background: var(--main-grad);
+    background-attachment: fixed;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px;
+}
+
+.cards-wrapper {
+    display: flex;
+    gap: 25px;
+    max-width: 1100px;
+    width: 100%;
+    align-items: stretch; /* Force les deux cartes à avoir la même hauteur */
+}
+
+/* Glass Card Design */
+.glass-card {
+    background: var(--glass-card);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid var(--glass-border);
+    border-radius: 28px;
+    padding: 40px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+h2 { font-size: 2.2rem; margin: 0 0 10px 0; font-weight: 800; letter-spacing: -1px; }
+.subtitle { opacity: 0.7; font-size: 0.95rem; margin-bottom: 30px; }
+
+/* Calendrier Translucide */
+.calendar-container {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.cal-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.cal-header select {
+    background: transparent;
+    color: var(--accent-yellow);
+    border: none;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    outline: none;
+}
+
+.cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    text-align: center;
+}
+
+.cal-day-name {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    opacity: 0.4;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.cal-date {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: 0.2s;
+    background: var(--glass-item);
+    border: 1px solid rgba(255,255,255,0.03);
+}
+
+.cal-date:hover { background: rgba(255,255,255,0.15); transform: scale(1.05); }
+
+.cal-date.active {
+    background: var(--accent-yellow);
+    color: #222;
+    font-weight: 700;
+    box-shadow: 0 0 15px rgba(241, 224, 90, 0.4);
+}
+
+.time-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    color: var(--accent-yellow);
+}
+
+.time-row input {
+    background: rgba(0,0,0,0.3);
+    border: none;
+    color: white;
+    padding: 8px;
+    width: 50px;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+/* Formulaires */
+.field-box { margin-bottom: 20px; }
+.message-field { flex: 1; display: flex; flex-direction: column; }
+.message-field textarea { flex: 1; min-height: 150px; }
+
+.field-label { display: block; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; opacity: 0.8; font-weight: 600; }
+
+input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: 14px;
+    color: white;
+    box-sizing: border-box;
+    outline: none;
+}
+
+/* Boutons */
+.action-btn {
+    background: white;
+    color: #7928ca;
+    border: none;
+    padding: 18px;
+    border-radius: 50px;
+    font-weight: 800;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 20px;
+}
+
+.action-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(0,0,0,0.25); }
+
+/* Footer */
+.footer { padding: 40px; text-align: center; }
+.social-icons { display: flex; justify-content: center; gap: 30px; margin-bottom: 20px; }
+.social-icons a { color: white; font-size: 1.5rem; transition: 0.3s; }
+.social-icons a:hover { color: var(--accent-yellow); transform: scale(1.2); }
+.copy-text { font-size: 0.8rem; opacity: 0.6; }
+
+@media (max-width: 850px) {
+    .cards-wrapper { flex-direction: column; }
+}
