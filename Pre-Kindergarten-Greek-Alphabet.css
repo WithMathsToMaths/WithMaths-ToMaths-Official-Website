@@ -1,0 +1,123 @@
+body {
+    font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif;
+    background: linear-gradient(135deg, #e0f7fa 0%, #fff9c4 100%);
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    color: #2c3e50;
+    overflow-x: hidden;
+}
+
+.back-button {
+    display: inline-block;
+    float: left;
+    padding: 12px 24px;
+    background-color: #ff5722;
+    color: white;
+    font-weight: bold;
+    border-radius: 15px;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.back-button:hover { 
+    transform: scale(1.05); 
+}
+
+header { 
+    margin-top: 50px; 
+}
+
+header h1 { 
+    font-size: 3rem; 
+    color: #ff5722; 
+    text-shadow: 3px 3px #fff; 
+    margin: 0; 
+}
+
+header p { 
+    font-size: 1.4rem; 
+    color: #4a148c; 
+    font-weight: bold; 
+    margin-top: 10px; 
+}
+
+.grid-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+.math-card {
+    background: #ffffff;
+    border: 6px solid #4caf50;
+    border-radius: 20px;
+    width: 200px;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.math-card:hover {
+    transform: scale(1.08) rotate(2deg);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+    border-color: #ff9800;
+}
+
+.card-letter { 
+    font-size: 4.5rem; 
+    font-weight: bold; 
+    margin: 0; 
+    line-height: 1; 
+}
+
+.card-name { 
+    font-size: 1.4rem; 
+    font-weight: bold; 
+    color: #333; 
+    margin: 5px 0 0 0; 
+}
+
+.card-category {
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* Animation Magique de Roulement */
+.fade-out { 
+    opacity: 0 !important; 
+    pointer-events: none; 
+    transition: opacity 0.5s ease; 
+}
+
+.zoom-and-spin {
+    position: fixed;
+    z-index: 9999;
+    top: 50%;
+    left: 50%;
+    margin-top: -110px;
+    margin-left: -100px;
+    animation: magicZoomSpin 1.2s forwards ease-in-out;
+    pointer-events: none;
+    border-color: #ff9800 !important;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+@keyframes magicZoomSpin {
+    0% { transform: scale(1) rotate(0deg); }
+    30% { transform: scale(1.4) rotate(-20deg); }
+    100% { transform: scale(2.5) rotate(360deg); }
+}
