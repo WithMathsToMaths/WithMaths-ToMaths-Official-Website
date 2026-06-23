@@ -1,0 +1,109 @@
+body {
+    font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif;
+    background: linear-gradient(135deg, #f3e5f5 0%, #e8eaf6 100%);
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    color: #2c3e50;
+}
+
+.back-button {
+    display: inline-block;
+    float: left;
+    padding: 12px 24px;
+    background-color: #ff5722;
+    color: white;
+    font-weight: bold;
+    border-radius: 15px;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.back-button:hover { 
+    transform: scale(1.05); 
+}
+
+header { 
+    margin-top: 50px; 
+    margin-bottom: 40px; 
+}
+
+.hero-title { 
+    font-size: 3.5rem; 
+    color: #4a148c; 
+    margin: 0; 
+    text-shadow: 2px 2px #fff; 
+}
+
+.hero-subtitle { 
+    font-size: 1.3rem; 
+    color: #ff9800; 
+    font-weight: bold; 
+    margin-top: 10px; 
+}
+
+.missions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.mission-card {
+    background: #ffffff;
+    border-radius: 30px;
+    border: 8px solid #cbd5e1;
+    padding: 30px 20px;
+    cursor: pointer;
+    box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mission-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 20px 35px rgba(0,0,0,0.15);
+}
+
+.mission-1 { border-color: #2196f3; } 
+.mission-2 { border-color: #4caf50; } 
+.mission-3 { border-color: #ffeb3b; } 
+.mission-4 { border-color: #e91e63; } 
+
+.mission-badge {
+    color: white;
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.mission-1 .mission-badge { background-color: #2196f3; }
+.mission-2 .mission-badge { background-color: #4caf50; }
+.mission-3 .mission-badge { background-color: #fbc02d; color: black; }
+.mission-4 .mission-badge { background-color: #e91e63; }
+
+.mission-icon { 
+    font-size: 4.5rem; 
+    margin: 15px 0; 
+}
+
+.mission-name { 
+    font-size: 1.8rem; 
+    font-weight: bold; 
+    margin: 10px 0 5px 0; 
+}
+
+.mission-desc { 
+    font-size: 1rem; 
+    color: #64748b; 
+    font-weight: 500; 
+    margin: 0; 
+}
