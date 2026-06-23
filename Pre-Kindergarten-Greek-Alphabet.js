@@ -48,9 +48,9 @@ document.addEventListener('DOMContentLoaded', () => {
             
             card.classList.add('zoom-and-spin');
             
-            // Redirection vers le fichier unique post-page après 1.2s
+            // Redirection vers le fichier unique Pre-Kindergarten-Greek-Alphabet-Mission après 1.2s
             setTimeout(() => {
-                window.location.href = `post-page.html?letter=${letter.name}`;
+                window.location.href = ` Pre-Kindergarten-Greek-Alphabet-Mission.html?letter=${letter.name}`;
             }, 1200);
         });
         
