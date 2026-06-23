@@ -1,0 +1,113 @@
+body {
+    margin: 0; padding: 0;
+    background-color: #ffffff;
+    overflow: hidden;
+    font-family: sans-serif;
+    width: 100vw; height: 100vh;
+}
+
+.banner { width: 100%; height: 100vh; position: relative; }
+
+/* --- SLIDER 3D --- */
+.slider {
+    position: absolute; 
+    width: 12vw; height: 18vw;
+    top: 15vh; left: 15vw;
+    transform-style: preserve-3d;
+    transform: perspective(1200px) rotateX(-12deg);
+    animation: autoRun 25s linear infinite;
+}
+
+@keyframes autoRun {
+    from { transform: perspective(1200px) rotateX(-12deg) rotateY(0deg); }
+    to { transform: perspective(1200px) rotateX(-12deg) rotateY(360deg); }
+}
+
+.slider .item {
+    position: absolute; inset: 0;
+    transform: rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(15vw);
+}
+
+.greek-card {
+    width: 100%; height: 100%;
+    background: #ffffff; border-radius: 1vw;
+    display: flex; flex-direction: column; justify-content: space-around; align-items: center;
+    color: #2c7bb6; border: 1px solid #d0d0d0;
+    box-shadow: 0 1vw 2vw rgba(0, 0, 0, 0.35);
+    padding: 1vw 0;
+}
+
+.honk-title { font-family: "Honk", system-ui; font-size: 1.2vw; text-align: center; margin: 0; }
+.symbol { font-family: 'Lora', serif; font-size: 3vw; }
+.symbol-small { font-family: 'Lora', serif; font-size: 2vw; }
+.label { font-size: 0.6vw; color: #999; text-transform: uppercase; font-weight: bold; }
+.name-text { font-family: serif; font-size: 1.4vw; color: #2c7bb6; }
+
+/* --- BOITE D'INFORMATION --- */
+.floating-box {
+    position: absolute; 
+    right: 5vw; top: 22vh;
+    width: 28vw; 
+    padding: 2vw;
+    background: white; border-radius: 1.5vw;
+    box-shadow: 0 1vw 3vw rgba(0,0,0,0.12);
+    opacity: 0; transform: translateX(5vw);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    text-align: center;
+}
+.floating-box.show { opacity: 1; transform: translateX(0); }
+
+.social-icons { display: flex; justify-content: center; gap: 0.8vw; margin-bottom: 1.5vw; align-items: center; }
+.social-icons img, .x-svg { width: 1.8vw; height: 1.8vw; transition: 0.3s; }
+.x-svg { fill: #000; vertical-align: middle; }
+.social-icons a:hover { transform: translateY(-0.3vw); }
+
+.copyright-text {
+    font-family: "Lora", serif;
+    font-size: 0.80vw;
+    line-height: 1.5;
+    color: #666;
+    text-align: justify;
+    margin: 0;
+    border-top: 1px solid #eee;
+    padding-top: 1.2vw;
+}
+
+/* --- CUBE --- */
+.cube-container {
+    position: absolute; bottom: 10vh; right: 8vw;
+    opacity: 0; transform: translateY(10vh);
+    transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.cube-container.fly-in { opacity: 1; transform: translateY(0); }
+
+.cube { width: 5.5vw; height: 5.5vw; transform-style: preserve-3d; transform: rotateX(-30deg) rotateY(45deg); }
+.cube-container.fly-in .cube { animation: bounce 2s ease-in-out infinite; }
+
+@keyframes bounce { 
+    0%, 100% { transform: rotateX(-30deg) rotateY(45deg) translateY(0); } 
+    50% { transform: rotateX(-30deg) rotateY(45deg) translateY(-1.5vw); } 
+}
+
+.cube div { position: absolute; width: 100%; height: 100%; transform-style: preserve-3d; }
+.cube div span {
+    position: absolute; width: 100%; height: 100%;
+    background: linear-gradient(#151515, #00ecff);
+    transform: rotateY(calc(90deg * var(--i))) translateZ(2.75vw);
+    transition: 0.4s;
+}
+.cube .top {
+    position: absolute; width: 5.5vw; height: 5.5vw; background: #222;
+    transform: rotateX(90deg) translateZ(2.75vw);
+    display: flex; justify-content: center; align-items: center;
+    color: #00ecff; font-size: 0.8vw; font-weight: bold; transition: 0.4s;
+}
+.cube .top::before {
+    content: ''; position: absolute; width: 5.5vw; height: 5.5vw;
+    background: #00ecff; transform: translateZ(-8vw);
+    filter: blur(1.5vw); box-shadow: 0 0 6vw rgba(0,236,255,0.6);
+}
+
+.cube-button:hover .cube div span { background: linear-gradient(#151515, #ff0057); }
+.cube-button:hover .cube .top { color: #ff0057; }
+.cube-button:hover .cube .top::before { background: #ff0057; box-shadow: 0 0 7vw rgba(255, 0, 87, 0.8); }

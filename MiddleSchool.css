@@ -1,0 +1,147 @@
+:root {
+    --bg-color: #0c0c0c;
+    --card-bg-initial: #1c1c1e;
+    --accent-purple: #7048f7;
+    --text-white: #ffffff;
+    --text-muted: #888888;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-white);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 80px;
+}
+
+.logo {
+    font-weight: 900;
+    letter-spacing: 0.5px;
+}
+
+.btn-outline {
+    text-decoration: none;
+    color: var(--accent-purple);
+    border: 1.5px solid var(--accent-purple);
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.btn-outline:hover {
+    background-color: var(--accent-purple);
+    color: white;
+}
+
+/* Container */
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-grow: 1;
+    padding: 0 10%;
+    gap: 40px;
+}
+
+/* Hero Text Style Strict Image 3 */
+.hero-text h1 {
+    font-weight: 900;
+    font-size: 5.5rem;
+    line-height: 0.9;
+    margin: 15px 0;
+}
+
+.purple-highlight {
+    color: var(--accent-purple);
+}
+
+.hero-text .subtitle {
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.hero-text .description {
+    color: #b0b0b0;
+    margin-bottom: 20px;
+    max-width: 380px;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    background-color: #222;
+    padding: 8px 18px;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.back-link:hover {
+    background-color: var(--accent-purple);
+}
+
+/* Grille spécifique Middle School */
+.grade-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+/* Centrer la 8th Grade (3ème carte) sur la ligne du dessous */
+.middle-school-layout .grade-card-link:nth-child(3) {
+    grid-column: span 2;
+    justify-self: center;
+}
+
+.grade-card-link {
+    text-decoration: none;
+}
+
+.grade-card {
+    background-color: var(--card-bg-initial);
+    width: 280px;
+    padding: 40px 20px;
+    border-radius: 25px;
+    text-align: center;
+    border: 1px solid #2a2a2a;
+    transition: transform 0.3s ease, background-color 0.4s ease;
+}
+
+.grade-card h2 {
+    font-weight: 800;
+    font-size: 1.7rem;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.grade-card p {
+    color: var(--text-muted);
+}
+
+/* Effets Hover (Le rectangle devient violet) */
+.grade-card-link:hover .grade-card {
+    background-color: var(--accent-purple);
+    transform: scale(1.05);
+}
+
+.grade-card-link:hover .grade-card p {
+    color: rgba(255, 255, 255, 0.8);
+}

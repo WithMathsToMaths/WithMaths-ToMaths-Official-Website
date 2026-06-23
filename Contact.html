@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WithMaths ToMaths - Contact</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="Contact.css">
+</head>
+<body>
+
+    <div class="page-container">
+        <div class="cards-wrapper">
+            
+            <div class="glass-card">
+                <h2>Book Me</h2>
+                <p class="subtitle">Secure your slot and tell me about your project.</p>
+                
+                <div class="field-box">
+                    <span class="field-label">Full Name</span>
+                    <input type="text" id="nameInput" placeholder="Enter your name">
+                </div>
+
+                <div class="field-box">
+                    <span class="field-label">Details</span>
+                    <textarea id="detailsInput" rows="3" placeholder="Brief description..."></textarea>
+                </div>
+
+                <div class="calendar-container">
+                    <div class="cal-header">
+                        <select id="monthSelector"></select>
+                        <select id="yearSelector"></select>
+                    </div>
+                    <div class="cal-grid" id="calendarGrid"></div>
+                    <div class="time-row">
+                        <i class="far fa-clock"></i>
+                        <input type="number" id="hVal" value="12" min="0" max="23"> : 
+                        <input type="number" id="mVal" value="00" min="0" max="59">
+                    </div>
+                </div>
+
+                <button class="action-btn" onclick="submitBooking()">Submit Request</button>
+            </div>
+
+            <div class="glass-card">
+                <h2>Contact Me</h2>
+                <p class="subtitle">Have a quick question? I'm just a message away.</p>
+                
+                <div class="field-box">
+                    <span class="field-label">Email Address</span>
+                    <input type="email" id="contactEmail" placeholder="your@email.com">
+                </div>
+                
+                <div class="field-box">
+                    <span class="field-label">Subject</span>
+                    <input type="text" id="contactSubject" placeholder="What is this about?">
+                </div>
+                
+                <div class="field-box message-field">
+                    <span class="field-label">Message</span>
+                    <textarea id="contactMsg" placeholder="Type your message here..."></textarea>
+                </div>
+                
+                <button class="action-btn" onclick="submitContact()">Send Message</button>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-x-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-snapchat"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+        <div class="copy-text">© 2026 WithMaths ToMaths. All rights reserved.</div>
+    </div>
+
+    <script src="Contact.js"></script>
+</body>
+</html>
