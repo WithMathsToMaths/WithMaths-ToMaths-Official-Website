@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Mission Platform</title>
+    <link rel="stylesheet" href="Pre-Kindergarten-Greek-Alphabet-Mission.css">
+</head>
+<body>
+
+    <a href="Pre-Kindergarten-Greek-Alphabet.html" class="back-button">⬅ Back to Map</a>
+
+    <header>
+        <h1 class="hero-title" id="post-main-title">🌟 Loading Mission... 🌟</h1>
+        <p class="hero-subtitle" id="post-sub-title">Complete the magic steps in order!</p>
+    </header>
+
+    <main class="missions-grid">
+        <div class="mission-card mission-1" onclick="startMission('listening')">
+            <span class="mission-badge">Step 1</span>
+            <div class="mission-icon">🎧</div>
+            <h2 class="mission-name">Listening</h2>
+            <p class="mission-desc" id="desc-listening"></p>
+        </div>
+
+        <div class="mission-card mission-2" onclick="startMission('speaking')">
+            <span class="mission-badge">Step 2</span>
+            <div class="mission-icon">🗣️</div>
+            <h2 class="mission-name">Speaking</h2>
+            <p class="mission-desc" id="desc-speaking"></p>
+        </div>
+
+        <div class="mission-card mission-3" onclick="startMission('reading')">
+            <span class="mission-badge">Step 3</span>
+            <div class="mission-icon">👁️</div>
+            <h2 class="mission-name">Reading</h2>
+            <p class="mission-desc" id="desc-reading"></p>
+        </div>
+
+        <div class="mission-card mission-4" onclick="startMission('writing')">
+            <span class="mission-badge">Step 4</span>
+            <div class="mission-icon">✏️</div>
+            <h2 class="mission-name">Writing</h2>
+            <p class="mission-desc" id="desc-writing"></p>
+        </div>
+    </main>
+
+    <script src="Pre-Kindergarten-Greek-Alphabet-Mission.js"></script>
+</body>
+</html>
